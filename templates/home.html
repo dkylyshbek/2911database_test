@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ student.name }}</title>
+    <!-- <link rel="stylesheet" href="../CSS/styles.css"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
+
+</head>
+    <body>
+        <table>
+            <div class="main_heading">
+            <h1>{{ student.name }}</h1>
+            </div>
+            <h3><a href="/create">Create New Course</a></h3>
+            <thead>
+                <th>Course Number</th>
+                <th>Teacher</th>
+                <th>Credits</th>
+                <th>Grades</th>
+                <th colspan="2">Methods</th>
+            </thead>
+        <tbody>
+            {% for course in student.courses %} 
+            <tr>
+                <td>{{ course.course_number }}</td>
+                <td>{{ course.teacher }}</td>
+                <td>{{ course.credits }}</td>
+                <td>{{ course.grades }}</td>
+                <td><a href="/delete/{{ course.course_number }}">Delete</a></td>
+                <td><a href="/view/{{ course.course_number }}">View</a></td>
+            </tr>
+            {% endfor %}
+            <a> GPA: {{ calc.calculation() }}</a>
+        </tbody>
+    </table>
+    </body>
+</html>

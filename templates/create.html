@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create New Course</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
+</head>
+<body>
+    <form method="POST">
+        <label for="course_number">Course Number:</label>
+        <input type="text" name="course_number" id="post_input" required/>
+        <br>
+        <label for="first_name">Teacher:</label>
+        <input type="text" name="teacher" id="post_input" required/>
+        <br>
+        <label for="credits">Credits:</label>
+        <input type="text" name="credits" id="post_input" required/>
+        <br>
+        <label for="gradest">Grades:</label>
+        <input type="text" name="grades" id="post_input" required/>
+
+        <br>
+        <input type="submit" value="Submit Data"/>
+        <a href="/">Cancel</a>
+        
+        
+
+
+    </form>
+</body>
+</html>
